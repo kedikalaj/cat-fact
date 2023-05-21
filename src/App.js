@@ -1,22 +1,22 @@
-import './App.css';
 
-function App() {
+import Facts from "./components/Facts"
+import retrieveData from './API';
+import { useState } from "react";
+
+ function App() {
+  const [facts, setFacts] = useState("https://catfact.ninja/facts");
+
+
+
+  const updateData = async (facts)=>{
+    const result = await retrieveData(facts);
+    setFacts(result);
+  };
+  updateData(facts).then((data)=>{return data})
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <div >
+      <Facts facts={}/>
     </div>
   );
 }
