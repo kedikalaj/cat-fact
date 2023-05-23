@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./facts.css"
 
-function ShowFact({ fact, handleDelete }) {
+function ShowFact({ fact, index, handleDelete }) {
   const [toggle, setToggle] = useState(false);
 
   const setVisibility = () => {
@@ -22,7 +22,7 @@ function ShowFact({ fact, handleDelete }) {
                 </div>
                 <div> 
                   <button className="button is-info" onClick={() => setVisibility()}>Return</button>
-                  <button className="button is-danger" onClick={(fact) => handleDelete(fact) } >Delete</button>
+                  <button className="button is-danger" onClick={() => handleDelete(index) } >Delete</button>
                 </div>
               </div>
             </div>

@@ -1,7 +1,6 @@
 
 import Facts from "./components/Facts"
 import Pagination from "./components/Pagination"
-import retrieveData from './API';
 import { useState } from "react";
 import { useEffect} from "react";
 
@@ -16,7 +15,6 @@ useEffect(() => {
     try {
       const response = await fetch(url);
       const jsonData = await response.json();
-      console.log(jsonData);
       setFacts(jsonData);
     } catch (error) {
       console.error('Error fetching data:', error);
