@@ -7,6 +7,26 @@
   margin: 10px;
 }
 
-.box{
-  box-shadow: 50px;
+.flex-box {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: auto;
+  width: 70%;
+}
+
+.flex-item {
+  background-color: rgb(171, 171, 171);
+  
+  font-size: 14px;
+  padding: 10px;
+  margin: 2px;
+}
+
+.background{
+  background-color: rgba(68, 68, 68, 0.772);
+}
+
+.title{
+  text-align: center;
+  padding-top: 20px;
 }

@@ -5,6 +5,7 @@ import retrieveData from './API';
 import { useState } from "react";
 import { useEffect} from "react";
 
+
  function App() {
   const [facts, setFacts] = useState(null);
   const [url, setUrl] = useState('https://catfact.ninja/facts');
@@ -33,7 +34,6 @@ const handleDataChange = (newUrl) => {
     <div>
       {facts ? (
          <div >
-
           <div>
           <Facts facts={facts}/>
           </div> 

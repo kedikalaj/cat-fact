@@ -1,5 +1,4 @@
 import "./pagination.css"
-import ShowFact from "./ShowFact"
 import 'bulma/css/bulma.min.css';
 
 function Pagination({facts, handleDataChange}) {
@@ -14,14 +13,14 @@ function Pagination({facts, handleDataChange}) {
     return (
         <div>
              
-            <button class="button" onClick={()=>handleButtonClick(link.url)}>{link.label}</button>
+            <button className="button" onClick={()=>handleButtonClick(link.url)}>{link.label}</button>
         </div>
       );
   })
 
     return (
       
-      <div class="flex-container">{renderLinks}</div>
+      <div className="flex-container">{renderLinks}</div>
     );
   }
 
