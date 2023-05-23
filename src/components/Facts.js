@@ -1,16 +1,17 @@
 import "./facts.css"
 import ShowFact from "./ShowFact"
+import 'bulma/css/bulma.min.css';
 
 function Facts({facts}) {
-  console.log(facts);
+
   const rednderedFacts = facts.data.map((fact)=>{
-    console.log("test11111111");
-    console.log(fact);
-    return <ShowFact fact={fact}/>
+
+    return <ShowFact fact={fact.fact}/>
   })
 
     return (
-      <div className="facts-list">{rednderedFacts}</div>
+      
+      <div>{rednderedFacts}</div>
     );
   }
   

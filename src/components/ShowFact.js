@@ -1,11 +1,13 @@
+import "./facts.css"
 
-function ShowFact({fact}) {
-    return (
+function ShowFact({ fact }) {
+  return (
+    <div class="box">
       <div>
-        <p>{fact}</p>
+      <strong><p>{fact}</p></strong> 
       </div>
-    );
-  }
-  
-  export default ShowFact;
-  
+    </div>
+  );
+}
+
+export default ShowFact;

@@ -1,16 +1,10 @@
 import axios from "axios";
 
-const retrieveData = async (pageLink)=>{
-    const response = await axios.get(pageLink,
-        {
-        headers:{},
-        params: {},
-        }
-    ).then(response=>console.log(response));
-    console.log("test");
+const retrieveData = async ()=>{
+    const url="https://catfact.ninja/facts";
+    const response = await axios.get(url)
     console.log(response.data);
     return response.data;
 }
-
 
 export default retrieveData;
