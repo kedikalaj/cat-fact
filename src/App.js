@@ -2,44 +2,43 @@
 import Facts from "./components/Facts"
 import Pagination from "./components/Pagination"
 import { useState } from "react";
-import { useEffect} from "react";
+import { useEffect } from "react";
 
 
 
- function App() {
+function App() {
   const [facts, setFacts] = useState(null);
   const [url, setUrl] = useState('https://catfact.ninja/facts');
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        const jsonData = await response.json();
+        setFacts(jsonData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
 
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const response = await fetch(url);
-      const jsonData = await response.json();
-      setFacts(jsonData);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
+    fetchData();
+  }, [url]);
+
+  const handleDataChange = (newUrl) => {
+    setUrl(newUrl);
   };
-
-  fetchData();
-}, [url]);
-
-const handleDataChange = (newUrl) => {
-  setUrl(newUrl);
-};
 
   return (
     <div>
       {facts ? (
-         <div >
+        <div >
           <div>
-            <Facts facts={facts}/>
-          </div> 
+            <Facts facts={facts} />
+          </div>
           <div>
             <Pagination facts={facts} handleDataChange={handleDataChange} />
           </div>
-       </div>
+        </div>
       ) : (
         <div>Loading...</div>
       )}
