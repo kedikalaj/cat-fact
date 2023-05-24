@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useEffect} from "react";
 
 
+
  function App() {
   const [facts, setFacts] = useState(null);
   const [url, setUrl] = useState('https://catfact.ninja/facts');
@@ -33,7 +34,7 @@ const handleDataChange = (newUrl) => {
       {facts ? (
          <div >
           <div>
-          <Facts facts={facts}/>
+            <Facts facts={facts}/>
           </div> 
           <div>
             <Pagination facts={facts} handleDataChange={handleDataChange} />

@@ -5,7 +5,6 @@ function Pagination({facts, handleDataChange}) {
 
     const handleButtonClick = (url) => {
         console.log(url)
-        console.log("d")
         const newData = url;
         handleDataChange(newData);
       };
