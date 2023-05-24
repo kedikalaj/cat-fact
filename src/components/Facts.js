@@ -6,16 +6,25 @@ import 'bulma/css/bulma.min.css';
 
 function Facts({facts}) {
 
-  const [data, setData]=useState(facts.data);
+  const [data, setData]=useState([]);
+  useEffect(()=>{
+    setData(facts.data);
+  },[])
+ 
   
 
   const handleDelete=(index)=>{
-       data.splice(index, 1);
-       setData(data);
+    console.log(data);
+    console.log(index);
+       const list = data;
+       const arr = data.splice(index, 1);
+       const filteredList = list.filter(item => item !== arr);
+
+       console.log(filteredList);
+       setData(filteredList);
   }
 
   const rednderedFacts = data.map((fact, index)=>{
-    console.log(index)
     return <ShowFact fact={fact.fact} index={index} handleDelete={handleDelete}/>
   })
 
